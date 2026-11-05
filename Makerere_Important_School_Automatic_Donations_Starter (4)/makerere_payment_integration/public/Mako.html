@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Makerere Important School - Secure Donations</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#fffaf5}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 4%;background:#fff;border-bottom:3px solid #b91c1c;flex-wrap:wrap}
+.logo{display:flex;gap:12px;align-items:center}
+.logo-text h1{color:#b91c1c;font-size:21px;line-height:1}
+.logo-text span{font-size:11px;color:#666;letter-spacing:1px}
+nav{display:flex;gap:14px;align-items:center;font-size:13px;font-weight:bold;flex-wrap:wrap}
+nav a{color:#222;text-decoration:none}
+.btn-red{background:#b91c1c;color:#fff;padding:11px 20px;border-radius:24px;border:none;cursor:pointer;font-weight:bold;font-size:14px}
+.hero{height:560px;background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)),url('real_students_compressed.jpg');background-size:cover;background-position:center top;display:flex;align-items:center;color:#fff}
+.hero-content{padding:0 5%;max-width:750px}
+.hero-content h1{font-size:33px;line-height:1.15;margin-bottom:10px}
+.hero-content p{font-size:13px;line-height:1.4;margin-bottom:8px}
+.banner{background:#b91c1c;color:#fff;text-align:center;padding:13px;font-size:16px;font-weight:bold;letter-spacing:0.5px}
+.main{display:flex;gap:20px;padding:28px 4%;flex-wrap:wrap}
+.left{flex:1;min-width:280px}
+.cards{flex:1.5;display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:320px}
+.card{border:1px solid #e8c4c4;background:#fff;padding:14px;border-radius:12px}
+.card h4{color:#b91c1c;font-size:13px}
+.card p{font-size:12px;margin-top:4px;line-height:1.3}
+.donation{flex:0.9;min-width:310px;background:#991b1b;color:#fff;padding:22px;border-radius:16px}
+.btn-white{background:#fff;color:#991b1b;display:block;text-align:center;padding:12px;border-radius:24px;font-weight:bold;text-decoration:none;margin:12px 0;cursor:pointer;border:none;width:100%;font-size:15px}
+footer{background:#7f1d1d;color:#fff;display:flex;justify-content:space-between;padding:18px 4%;flex-wrap:wrap;gap:12px;font-size:13px;line-height:1.5}
+#donateModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;justify-content:center;align-items:center;padding:12px}
+.modal-card{background:#fff;max-width:530px;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.modal-head{background:#b91c1c;color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.step{display:none;padding:22px}.step.active{display:block}
+input{width:100%;padding:13px;border:1.5px solid #ccc;border-radius:10px;margin:8px 0;font-size:15px}
+.note{background:#fee2e2;padding:10px;border-radius:10px;font-size:12px;margin:10px 0;line-height:1.4;border:1px solid #fecaca}
+.network-btn{display:flex;gap:12px;margin:12px 0}
+.network-option{flex:1;padding:12px;border:2.5px solid #ddd;border-radius:12px;text-align:center;cursor:pointer;transition:0.2s}
+.network-option.selected{border-color:#b91c1c;background:#fef2f2;transform:scale(1.02)}
+.badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px;font-weight:bold;margin:2px}
+.badge-airtel{background:red;color:#fff}
+.badge-mtn{background:#000;color:#ffcc02}
+@media(max-width:850px){.hero-content h1{font-size:26px}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+<img src="school_badge.jpg" style="width:80px;height:100px;object-fit:contain;background:white;border-radius:8px;border:2px solid #1e3a8a" alt="Makerere Important School Badge">
+<div class="logo-text"><h1>MAKERERE<br>IMPORTANT SCHOOL</h1><span>KAWEMPE-MAKERERE II• UGANDA<br>We Challenge Ignorance</span></div>
+</div>
+<nav>
+<a href="#">HOME</a>
+<a href="#">ABOUT</a>
+<a href="#">OUR COMMITMENT</a>
+<a href="#">CONTACT</a>
+<button class="btn-red" onclick="openModal()">DONATE NOW TO HELP</button>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Every Child Deserves Your Kindness<br>We Teach Families With Financial Problems</h1>
+<p><b>Your Support Keeps a Child Learning.</b> Makerere Important School is a Non-Governmental Organisation helping families in communities with financial difficulties. Families who cannot afford fees or basic learning materials are welcomed here.</p>
+<p>✓ <b>Our Promise - We Welcome Children Whose Families Struggle Financially - No Child Turned Away Due To Poverty</b></p>
+<div style="margin:16px 0;display:flex;gap:12px;flex-wrap:wrap">
+<button class="btn-red" onclick="openModal()">DONATE NOW TO BLESS</button>
+<button style="background:transparent;border:1.5px solid #fff;color:#fff;padding:11px 20px;border-radius:24px;font-weight:bold;cursor:pointer">READ OUR COMMITMENT</button>
+</div>
+<p>📞 <b>Airtel Money| MTN MobileMoney
+</b></p>
+</div>
+</section>
+
+<div class="banner">WE TEACH PEOPLE WITH FINANCIAL PROBLEMS - AIRTEL & MTN DONATIONS WELCOME - ANY AMOUNT FROM THE HEART</div>
+
+<section class="main">
+<div class="left">
+<h2 style="font-size:23px;line-height:1.2">Our Commitment —<br>No Child Left Behind</h2>
+<p style="font-size:13px;line-height:1.5;margin-top:12px">We are committed to ensuring every child receives access to quality basic education regardless of their family's financial situation. Through community support and generosity, we keep hope and learning alive for the children of Kawaala. Both Airtel Money and MTN Mobile Money donations are welcome.</p>
+</div>
+
+<div class="cards">
+<div class="card"><h4>📖 Free Education for Children</h4><p>Quality learning at no cost to families in need.</p></div>
+<div class="card"><h4>🤝 Support for Low-Income Families</h4><p>Assistance with school fees and essentials for struggling families.</p></div>
+<div class="card"><h4>🍲 Meals & Care Provided</h4><p>Daily meals and care to keep children healthy and focused.</p></div>
+<div class="card"><h4>📚 Learning Materials & Support</h4><p>Books, pens, uniforms and learning resources provided.</p></div>
+</div>
+
+<div class="donation">
+<h3>Enter Your Donation From The Heart</h3>
+<p style="font-size:13px;margin:10px 0;line-height:1.4">Your generosity changes lives. Every contribution helps a child stay in school and receive the care they deserve. Donate via Airtel or MTN.</p>
+<button class="btn-white" onclick="openModal()">DONATE NOW TO SUPPORT EDUCATION</button>
+<div style="background:rgba(0,0,0,0.2);padding:12px;border-radius:12px;margin:12px 0;font-size:13px;line-height:1.6">
+<span class="badge badge-airtel">Airtel Money</span>
+<span class="badge badge-mtn">MTN Mobile Money</span><br>
+Secure checkout is provided by our payment partner.
+</div>
+<p style="text-align:center;background:rgba(255,255,255,0.15);padding:10px;border-radius:10px;font-size:12px"><b>NO fixed donation amounts.<br>Open donation, any amount from the heart.</b></p>
+</div>
+</section>
+
+<footer>
+<div><b>Contact Us</b><br>Donations: Airtel Money & MTN Mobile Money<br>Email: makerereimportantsc@gmail.com<br>Kawaala, Kampala - Opposite Glory of Christ Church<br>Kawempe-Makerere, Kampala</div>
+<div><b>Follow Us</b><br>Facebook • Twitter • Instagram<br>Makerere Important School</div>
+<div>© 2024 Makerere Important School<br>All Rights Reserved<br>No Child Turned Away Due To Poverty<br>BLESS THAT YOU MAY GET BLESSED<br>We Challenge Ignorance</div>
+</footer>
+
+<div id="donateModal">
+<div class="modal-card">
+<div class="modal-head"><b>SECURE DONATION - AIRTEL & MTN</b><span onclick="closeModal()" style="cursor:pointer;font-size:26px;font-weight:bold">✕</span></div>
+
+<div id="s1" class="step active">
+<h3 style="color:#7f1d1d;font-size:18px">Step 1 — Enter Your Donation From The Heart</h3>
+<p style="font-size:13px;margin:8px 0;line-height:1.4">Your generosity changes lives. Enter any amount you wish to donate. Both Airtel and MTN are welcome.</p>
+<input id="amt" type="number" min="1000" step="1" inputmode="numeric" placeholder="Donation amount in UGX (e.g., 20000)">
+<input id="donorName" type="text" maxlength="100" autocomplete="name" placeholder="Your full name">
+<input id="donorEmail" type="email" maxlength="150" autocomplete="email" placeholder="Your email address (for payment reference)">
+<div style="font-size:12px;margin:8px 0">Quick select: <button onclick="setAmt(10000)" style="padding:4px 10px;margin:2px;border-radius:12px;border:1px solid #ccc;cursor:pointer">10,000</button> <button onclick="setAmt(25000)" style="padding:4px 10px;margin:2px;border-radius:12px;border:1px solid #ccc;cursor:pointer">25,000</button> <button onclick="setAmt(50000)" style="padding:4px 10px;margin:2px;border-radius:12px;border:1px solid #ccc;cursor:pointer">50,000</button> <button onclick="setAmt(100000)" style="padding:4px 10px;margin:2px;border-radius:12px;border:1px solid #ccc;cursor:pointer">100,000</button></div>
+<button class="btn-red" style="width:100%;margin-top:14px;padding:14px;font-size:16px" onclick="toS2()">NEXT → Choose Airtel or MTN</button>
+<p style="font-size:11px;text-align:center;margin-top:10px">🔒 Secure & Encrypted • SSL Protected • Verified Charity • No PIN on website</p>
+</div>
+
+<div id="s2" class="step">
+<h3 style="color:#7f1d1d;font-size:18px">Step 2 — Choose Your Mobile Money Network</h3>
+<p style="font-size:13px;margin:6px 0">Donation: <b><span id="amtShow"></span> UGX</b></p>
+<div class="network-btn">
+<div id="airtelOpt" class="network-option selected" onclick="selectNetwork('AIRTEL')">
+<div style="font-size:28px">📱</div><span class="badge badge-airtel">Airtel Money</span><br><small>Airtel Uganda</small>
+</div>
+<div id="mtnOpt" class="network-option" onclick="selectNetwork('MTN')">
+<div style="font-size:28px">📱</div><span class="badge badge-mtn">MTN MoMo</span><br><small>MTN Uganda</small>
+</div>
+</div>
+<input id="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="Mobile Money phone number (e.g., 07XXXXXXXX)">
+<div class="note"><b>Secure payment authorisation</b><br>After you continue, you will be taken to the payment provider's secure authorisation page. Follow the instructions there to approve the payment on your mobile money account. Never enter your Mobile Money PIN on this school website.</div>
+<button id="payButton" class="btn-red" style="width:100%;padding:14px;font-size:16px" onclick="toS3()">Continue to Secure Payment →</button>
+<button style="width:100%;margin-top:10px;padding:11px;border:1.5px solid #b91c1c;color:#b91c1c;background:#fff;border-radius:24px;font-weight:bold;cursor:pointer" onclick="showS(1)">← Back</button>
+</div>
+
+<div id="s3" class="step">
+<h3 style="color:#7f1d1d;font-size:18px">Payment status</h3>
+<div id="paymentMessage" class="note" role="status" aria-live="polite">Preparing your secure payment request…</div>
+<p id="paymentReference" style="font-size:12px;word-break:break-word;margin:10px 0"></p>
+<button class="btn-red" style="width:100%;margin-top:14px;padding:14px;font-size:16px" onclick="closeModal()">Close</button>
+</div></div></div>
+
+<script>
+let selectedNetwork = 'AIRTEL';
+let activeTxRef = null;
+function openModal(){document.getElementById('donateModal').style.display='flex';showS(1)}
+function closeModal(){document.getElementById('donateModal').style.display='none'}
+function showS(n){document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));document.getElementById('s'+n).classList.add('active')}
+function setAmt(v){document.getElementById('amt').value=v}
+function selectNetwork(net){
+  selectedNetwork = net;
+  document.getElementById('airtelOpt').classList.toggle('selected', net === 'AIRTEL');
+  document.getElementById('mtnOpt').classList.toggle('selected', net === 'MTN');
+}
+function toS2(){
+  const amount = Number(document.getElementById('amt').value);
+  const name = document.getElementById('donorName').value.trim();
+  const email = document.getElementById('donorEmail').value.trim();
+  if(!Number.isFinite(amount) || amount < 1000 || amount > 50000000){alert('Enter a donation amount between UGX 1,000 and UGX 50,000,000.');return;}
+  if(!name){alert('Please enter your name.');return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Please enter a valid email address.');return;}
+  document.getElementById('amtShow').innerText = amount.toLocaleString('en-UG');
+  showS(2);
+}
+function normaliseUgandanPhone(value){
+  let phone = value.replace(/[\s()-]/g, '');
+  if(phone.startsWith('+')) phone = phone.slice(1);
+  if(phone.startsWith('0')) phone = '256' + phone.slice(1);
+  return phone;
+}
+async function toS3(){
+  const button = document.getElementById('payButton');
+  const amount = Number(document.getElementById('amt').value);
+  const donorName = document.getElementById('donorName').value.trim();
+  const donorEmail = document.getElementById('donorEmail').value.trim();
+  const phone = normaliseUgandanPhone(document.getElementById('phone').value.trim());
+  if(!/^256\d{9}$/.test(phone)){alert('Enter a valid Ugandan mobile number, for example 07XXXXXXXX or 2567XXXXXXXX.');return;}
+  button.disabled = true;
+  button.textContent = 'Preparing secure payment…';
+  document.getElementById('paymentMessage').textContent = 'Contacting the payment provider. Please wait.';
+  document.getElementById('paymentReference').textContent = '';
+  showS(3);
+  try{
+    const response = await fetch('/api/create-payment', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({amount, name:donorName, email:donorEmail, phone, network:selectedNetwork})
+    });
+    const result = await response.json();
+    if(!response.ok) throw new Error(result.error || 'We could not start the payment. Please try again later.');
+    activeTxRef = result.txRef;
+    document.getElementById('paymentMessage').textContent = 'Your payment request has been prepared. You are being redirected to the secure payment authorisation page.';
+    document.getElementById('paymentReference').textContent = 'Reference: ' + activeTxRef;
+    if(!result.redirectUrl) throw new Error('The payment provider did not return an authorisation link. Please contact the school.');
+    window.location.assign(result.redirectUrl);
+  }catch(error){
+    document.getElementById('paymentMessage').textContent = error.message;
+  }finally{
+    button.disabled = false;
+    button.textContent = 'Continue to Secure Payment →';
+  }
+}
+async function checkReturnedPayment(){
+  const params = new URLSearchParams(window.location.search);
+  const txRef = params.get('donation_ref');
+  if(!txRef) return;
+  openModal(); showS(3);
+  document.getElementById('paymentMessage').textContent = 'Thank you. We are checking the payment status with the provider. Do not make another payment while this check is running.';
+  document.getElementById('paymentReference').textContent = 'Reference: ' + txRef;
+  for(let attempt=0; attempt<12; attempt++){
+    try{
+      const response = await fetch('/api/check-payment?tx_ref=' + encodeURIComponent(txRef));
+      const result = await response.json();
+      if(response.ok && result.status === 'successful'){
+        document.getElementById('paymentMessage').textContent = 'Payment confirmed. Thank you for supporting Makerere Important School. Amount received: UGX ' + Number(result.amount).toLocaleString('en-UG') + '.';
+        return;
+      }
+      if(response.ok && result.status === 'failed'){
+        document.getElementById('paymentMessage').textContent = 'The provider has not confirmed this payment. Please contact the school before trying again.';
+        return;
+      }
+    }catch(e){ /* A temporary network issue; try again below. */ }
+    await new Promise(resolve => setTimeout(resolve, 3000));
+  }
+  document.getElementById('paymentMessage').textContent = 'Your payment is still being checked. Please do not pay again yet. Contact the school with the reference above if the status does not update.';
+}
+window.addEventListener('DOMContentLoaded', checkReturnedPayment);
+</script>
+</body>
+</html>
